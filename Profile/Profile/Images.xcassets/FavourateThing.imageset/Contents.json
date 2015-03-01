@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "banana_PNG824-2.png"
+      "filename" : "banana@1x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "banana_PNG824-1.png"
+      "filename" : "banana@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "banana_PNG824.png"
+      "filename" : "banana@3x.png"
     }
   ],
   "info" : {

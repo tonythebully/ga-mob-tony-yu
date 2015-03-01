@@ -85,7 +85,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwe-B3-Zws">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwe-B3-Zws">
                                 <rect key="frame" x="16" y="203" width="568" height="41"/>
                                 <color key="backgroundColor" red="0.97254908080000002" green="0.98823535439999999" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -107,7 +107,7 @@
                                     <segue destination="PSi-cm-Suc" kind="presentation" id="An6-mv-h7F"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="ProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="nMB-FP-3Mk">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="nMB-FP-3Mk">
                                 <rect key="frame" x="16" y="264" width="568" height="326"/>
                             </imageView>
                         </subviews>
@@ -263,8 +263,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="FavourateThing" width="400" height="400"/>
-        <image name="ProfileImage" width="390" height="479"/>
+        <image name="FavourateThing" width="133" height="133"/>
+        <image name="ProfileImage" width="130" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="z85-wH-ugM"/>

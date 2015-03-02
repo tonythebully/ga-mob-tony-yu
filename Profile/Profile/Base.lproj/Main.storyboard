@@ -58,7 +58,9 @@
                             <constraint firstItem="14z-Jx-Tbg" firstAttribute="top" secondItem="Zhx-y3-Cys" secondAttribute="bottom" constant="22" id="rdz-4T-Opl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Login" id="JoD-LF-6XX"/>
+                    <navigationItem key="navigationItem" title="Login" id="JoD-LF-6XX">
+                        <barButtonItem key="backBarButtonItem" title="Log out" id="r2X-S6-3BE"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="91I-30-rhg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -85,9 +87,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwe-B3-Zws">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwe-B3-Zws">
                                 <rect key="frame" x="16" y="203" width="568" height="41"/>
                                 <color key="backgroundColor" red="0.97254908080000002" green="0.98823535439999999" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="Nhd-hR-oLK"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Goals">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -96,9 +101,12 @@
                                     <segue destination="k7t-i7-faJ" kind="show" id="28v-dk-03k"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGX-aN-bHU">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGX-aN-bHU">
                                 <rect key="frame" x="16" y="142" width="568" height="41"/>
                                 <color key="backgroundColor" red="0.97254908084869385" green="0.98823535442352295" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="Yy5-O8-pg7"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Info">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -107,7 +115,7 @@
                                     <segue destination="PSi-cm-Suc" kind="presentation" id="An6-mv-h7F"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="nMB-FP-3Mk">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="nMB-FP-3Mk">
                                 <rect key="frame" x="16" y="264" width="568" height="326"/>
                             </imageView>
                         </subviews>
@@ -267,6 +275,6 @@
         <image name="ProfileImage" width="130" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="z85-wH-ugM"/>
+        <segue reference="An6-mv-h7F"/>
     </inferredMetricsTieBreakers>
 </document>

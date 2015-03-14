@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    //IBaction function that is to contain the dismiss method
     @IBAction func DismissModule(sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
     }

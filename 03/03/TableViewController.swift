@@ -10,6 +10,7 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
+    //creating an array to be displated on table view controller
     let someArray : [String] = ["item 1", "item 2", "item 3"]
 
     override func viewDidLoad() {
@@ -45,6 +46,7 @@ class TableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("tableViewCell", forIndexPath: indexPath) as UITableViewCell
 
+        //calling the content of someArray to be displayed row by row
         cell.textLabel?.text = someArray[indexPath.row]
 
         return cell

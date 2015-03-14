@@ -34,7 +34,7 @@ class fibonacci_adder : NSObject{
                 }
                 
             }
-            if var label = outputLabel {
+            if let label = outputLabel {
                 label.text! = "\(result)"
                 //safety check and changing the label
             }

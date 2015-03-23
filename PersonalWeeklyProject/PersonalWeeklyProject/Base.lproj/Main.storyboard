@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Qp2-tE-kGD">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home Page-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PersonalWeeklyProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stalk my Friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLy-Vq-m6R">
+                                <rect key="frame" x="16" y="72" width="568" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="7xm-L9-biJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AyP-jV-JS6">
+                                <rect key="frame" x="16" y="500" width="568" height="80"/>
+                                <color key="backgroundColor" red="0.99215692281723022" green="0.9960784912109375" blue="0.9960784912109375" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Begin Stalking!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="C7R-in-Wuj" kind="show" id="8yG-cO-SOT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.33725491166114807" green="0.90980398654937744" blue="0.67843139171600342" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="AyP-jV-JS6" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="1JT-PC-OVu"/>
+                            <constraint firstItem="BLy-Vq-m6R" firstAttribute="height" secondItem="AyP-jV-JS6" secondAttribute="height" id="42w-1n-g3l"/>
+                            <constraint firstItem="BLy-Vq-m6R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6Cx-FW-Ehy"/>
+                            <constraint firstItem="AyP-jV-JS6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Hvy-bl-AYM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AyP-jV-JS6" secondAttribute="bottom" constant="20" id="Zfd-XW-fLS"/>
+                            <constraint firstItem="BLy-Vq-m6R" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="kzw-w2-wfQ"/>
+                            <constraint firstItem="BLy-Vq-m6R" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="lU1-Ka-aL4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home Page" id="meV-96-1jU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="854" y="-356"/>
+        </scene>
+        <!--Who am I stalking?-->
+        <scene sceneID="k7J-SY-08G">
+            <objects>
+                <tableViewController id="C7R-in-Wuj" customClass="FriendListTableView" customModule="PersonalWeeklyProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="AQr-Sv-uzf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendsToBeStalked" id="GKP-kI-DyP">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GKP-kI-DyP" id="di9-7X-ock">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ahl-fi-AZ7" kind="show" id="TyY-lR-0ch"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="C7R-in-Wuj" id="rqO-cA-WIG"/>
+                            <outlet property="delegate" destination="C7R-in-Wuj" id="ZPd-NH-y3x"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Who am I stalking?" id="tCL-Fe-gIX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="m0D-ec-1t3">
+                            <connections>
+                                <segue destination="9an-Lf-1uY" kind="presentation" id="bse-XE-ZNA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t1D-8K-Wor" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1548" y="-356"/>
+        </scene>
+        <!--Mediums-->
+        <scene sceneID="ysb-fR-JcR">
+            <objects>
+                <tableViewController id="ahl-fi-AZ7" customClass="MediumsTableViewController" customModule="PersonalWeeklyProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="RrK-Yc-BVS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stalkMediums" id="mHS-VZ-ooP">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mHS-VZ-ooP" id="knm-lt-vFu">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ahl-fi-AZ7" id="dYM-0H-46U"/>
+                            <outlet property="delegate" destination="ahl-fi-AZ7" id="49G-Ms-veY"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Mediums" id="0gs-G6-qbT"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KFU-AZ-1bb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2228" y="-356"/>
+        </scene>
+        <!--New Stalking Target-->
+        <scene sceneID="NAY-7G-vfJ">
+            <objects>
+                <viewController id="LzL-sm-LUW" customClass="AddNewViewController" customModule="PersonalWeeklyProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WGl-Im-vsQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="eaw-3R-qpu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BHw-Je-pwU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a nickname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3tL-6t-gyV">
+                                <rect key="frame" x="16" y="72" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Stalking Target" id="ROJ-gs-YNQ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="KCm-K8-t06"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="newContactTextField" destination="3tL-6t-gyV" id="I8j-w2-oKg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s6c-Nf-nkV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2228" y="344"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Rzk-bm-wEr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qp2-tE-kGD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ghJ-1R-RKD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="aUR-MC-F5O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j8X-Ah-HON" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="142" y="-356"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="301-x2-q4x">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9an-Lf-1uY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oVe-ko-FPB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LzL-sm-LUW" kind="relationship" relationship="rootViewController" id="cDA-BJ-b2F"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ewX-22-l4c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1548" y="344"/>
+        </scene>
+    </scenes>
+</document>

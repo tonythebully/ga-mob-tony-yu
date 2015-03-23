@@ -1,17 +1,16 @@
 //
-//  TableViewController.swift
-//  03
+//  MediumsTableViewController.swift
+//  PersonalWeeklyProject
 //
-//  Created by Tony Yu on 13/03/2015.
+//  Created by Tony Yu on 23/03/2015.
 //  Copyright (c) 2015 loljk. All rights reserved.
 //
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class MediumsTableViewController: UITableViewController {
     
-    //creating an array to be displated on table view controller
-    let someArray : [String] = ["item 1", "item 2", "item 3"]
+    var mediums : [String] = [""]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,25 +38,18 @@ class TableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return countElements(someArray)
+        return 0
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("tableViewCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("stalkMediums", forIndexPath: indexPath) as UITableViewCell
 
-        //calling the content of someArray to be displayed row by row
-        cell.textLabel?.text = someArray[indexPath.row]
+        cell.textLabel?.text = mediums[indexPath.row]
 
         return cell
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let section = (view as UITableView).indexPathForSelectedRow()!.section
-        let row = (view as UITableView).indexPathForSelectedRow()!.row
-        let nameKey = someArray
-        
-    }
 
     /*
     // Override to support conditional editing of the table view.

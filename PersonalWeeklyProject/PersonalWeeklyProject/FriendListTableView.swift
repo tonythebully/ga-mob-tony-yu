@@ -1,17 +1,22 @@
 //
-//  TableViewController.swift
-//  03
+//  TableViewOfFriendList.swift
+//  PersonalWeeklyProject
 //
-//  Created by Tony Yu on 13/03/2015.
+//  Created by Tony Yu on 21/03/2015.
 //  Copyright (c) 2015 loljk. All rights reserved.
 //
 
 import UIKit
 
-class TableViewController: UITableViewController {
-    
-    //creating an array to be displated on table view controller
-    let someArray : [String] = ["item 1", "item 2", "item 3"]
+class FriendListTableView: UITableViewController {
+
+    var people = [
+        [
+            "name" : "test",
+            "info" : [""]
+            
+        ]
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,25 +44,19 @@ class TableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return countElements(someArray)
+        return countElements(people)
     }
 
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("tableViewCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("FriendsToBeStalked", forIndexPath: indexPath) as UITableViewCell
 
-        //calling the content of someArray to be displayed row by row
-        cell.textLabel?.text = someArray[indexPath.row]
+        // prints the key of the current people dictionary
+        // as each dictionary only has one key, leaving array[0] should be ok
+        cell.textLabel?.text = people[indexPath.row]["name"] as? String
 
         return cell
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let section = (view as UITableView).indexPathForSelectedRow()!.section
-        let row = (view as UITableView).indexPathForSelectedRow()!.row
-        let nameKey = someArray
-        
-    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -103,5 +102,10 @@ class TableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func unwindAddNewContact(segue : UIStoryboardSegue) {
+        // not passing anything back yet
+        
+    }
 
 }

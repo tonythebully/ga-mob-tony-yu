@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZDp-i6-smz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZDp-i6-smz">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -157,7 +157,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DM-h4-K1k">
                                 <rect key="frame" x="16" y="64" width="568" height="536"/>
                                 <color key="backgroundColor" red="0.15686275059999999" green="0.81960791349999995" blue="0.96078437569999997" alpha="1" colorSpace="deviceRGB"/>
-                                <mutableString key="text">Hello there!  My name is Tony Yu, I actually also have a chinese name called 'Guang Xin', which stands for big faith or trust (excuse grammar).  I've had some specific knowledge on objective C previously, but I had never really had a foundation in it as I only learnt it on the job as I got thrown into the deep end.  I previously was studying mechatronics engineering at UNSW, but during my internship at a startup, they asked me if I would like to work full time, so I kind of ditched uni after finishing that current semester. Here I am, having around... 8 months of experience in full time doing a some coding, my boss had decided I might as well go and try and learn to be a dev, so he paid for this course (yay!).  Some of my hobbies includes: Volleyball League of Legends (add tonton if you want to play with me!)</mutableString>
+                                <string key="text">Hello there!  My name is Tony Yu, I actually also have a chinese name called 'Guang Xin', which stands for big faith or trust (excuse grammar).  I've had some specific knowledge on objective C previously, but I had never really had a foundation in it as I only learnt it on the job as I got thrown into the deep end.  I previously was studying mechatronics engineering at UNSW, but during my internship at a startup, they asked me if I would like to work full time, so I kind of ditched uni after finishing that current semester. Here I am, having around... 8 months of experience in full time doing a some coding, my boss had decided I might as well go and try and learn to be a dev, so he paid for this course (yay!).  Some of my hobbies includes: Volleyball League of Legends (add tonton if you want to play with me!)</string>
                                 <color key="textColor" red="0.85882359743118286" green="0.086274512112140656" blue="0.14509804546833038" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -205,7 +205,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="56A-zc-OV0"/>
                                 </constraints>
-                                <mutableString key="text">From this class, I hope I would be able to level up from my work place as from complete noob to not so complete noob, aka. get better at work.   I also would like to be able to explore transforming the many random ideas that I get during showers into apps, whether it would be games or more utility orientated apps!</mutableString>
+                                <string key="text">From this class, I hope I would be able to level up from my work place as from complete noob to not so complete noob, aka. get better at work.   I also would like to be able to explore transforming the many random ideas that I get during showers into apps, whether it would be games or more utility orientated apps!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

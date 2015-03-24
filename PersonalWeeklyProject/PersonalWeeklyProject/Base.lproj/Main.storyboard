@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stalk my Friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLy-Vq-m6R">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friendly Stalking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLy-Vq-m6R">
                                 <rect key="frame" x="16" y="72" width="568" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="7xm-L9-biJ"/>
@@ -69,7 +69,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="ahl-fi-AZ7" kind="show" id="TyY-lR-0ch"/>
+                                    <segue destination="ahl-fi-AZ7" kind="show" identifier="segueToMediums" id="Mtv-wh-2hK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -92,6 +92,56 @@
             </objects>
             <point key="canvasLocation" x="1548" y="-356"/>
         </scene>
+        <!--Add Mediums-->
+        <scene sceneID="Qr9-yb-gZm">
+            <objects>
+                <viewController id="QAK-b8-geB" customClass="AddContactInfoViewController" customModule="PersonalWeeklyProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yhr-vw-KKK"/>
+                        <viewControllerLayoutGuide type="bottom" id="0XH-ok-EHu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j3O-40-8xd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter different mediums about your contact! " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2P-1F-I8R">
+                                <rect key="frame" x="16" y="72" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address, facebook, twitter, favourate drink, etc" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AIy-t4-CtC">
+                                <rect key="frame" x="16" y="101" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="d2P-1F-I8R" firstAttribute="trailing" secondItem="j3O-40-8xd" secondAttribute="trailingMargin" id="7QG-Fz-8BQ"/>
+                            <constraint firstItem="AIy-t4-CtC" firstAttribute="top" secondItem="d2P-1F-I8R" secondAttribute="bottom" constant="8" id="AXH-Bu-MCR"/>
+                            <constraint firstItem="d2P-1F-I8R" firstAttribute="leading" secondItem="j3O-40-8xd" secondAttribute="leadingMargin" id="Gnj-80-U2j"/>
+                            <constraint firstItem="d2P-1F-I8R" firstAttribute="top" secondItem="Yhr-vw-KKK" secondAttribute="bottom" constant="8" id="Icq-f4-rUl"/>
+                            <constraint firstItem="AIy-t4-CtC" firstAttribute="leading" secondItem="j3O-40-8xd" secondAttribute="leadingMargin" id="guo-Yy-uTb"/>
+                            <constraint firstItem="AIy-t4-CtC" firstAttribute="trailing" secondItem="j3O-40-8xd" secondAttribute="trailingMargin" id="iby-rX-AKD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Mediums" id="J03-oO-wPo">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="7FX-ZM-DmO">
+                            <connections>
+                                <segue destination="Nze-3d-Wtc" kind="unwind" unwindAction="unwindAddInfo:" id="3hw-6U-VId"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mediumTextField" destination="AIy-t4-CtC" id="zhs-do-OL5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NBF-el-omm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Nze-3d-Wtc" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2910" y="-1045"/>
+        </scene>
         <!--Mediums-->
         <scene sceneID="ysb-fR-JcR">
             <objects>
@@ -113,7 +163,13 @@
                             <outlet property="delegate" destination="ahl-fi-AZ7" id="49G-Ms-veY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Mediums" id="0gs-G6-qbT"/>
+                    <navigationItem key="navigationItem" title="Mediums" id="0gs-G6-qbT">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="4pN-O3-fGA">
+                            <connections>
+                                <segue destination="guf-4l-7cE" kind="presentation" id="dY9-85-QpX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFU-AZ-1bb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -140,13 +196,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Stalking Target" id="ROJ-gs-YNQ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="KCm-K8-t06"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="KCm-K8-t06">
+                            <connections>
+                                <segue destination="3la-gR-JiC" kind="unwind" unwindAction="unwindAddNewContact:" id="R8u-C1-qEi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="newContactTextField" destination="3tL-6t-gyV" id="I8j-w2-oKg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s6c-Nf-nkV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="3la-gR-JiC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2228" y="344"/>
         </scene>
@@ -185,6 +246,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ewX-22-l4c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1548" y="344"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eJL-kO-Dye">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="guf-4l-7cE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VEc-yf-Nv7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QAK-b8-geB" kind="relationship" relationship="rootViewController" id="a4h-XZ-mKT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rat-CT-Ow2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2228" y="-1045"/>
         </scene>
     </scenes>
 </document>

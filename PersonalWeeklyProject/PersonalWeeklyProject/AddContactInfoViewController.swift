@@ -1,19 +1,20 @@
 //
-//  AddNewViewController.swift
+//  AddContactInfoViewController.swift
 //  PersonalWeeklyProject
 //
-//  Created by Tony Yu on 21/03/2015.
+//  Created by Tony Yu on 24/03/2015.
 //  Copyright (c) 2015 loljk. All rights reserved.
 //
 
 import UIKit
 
-class AddNewViewController: UIViewController {
+class AddContactInfoViewController: UIViewController {
 
-    @IBOutlet weak var newContactTextField: UITextField!
-
+    @IBOutlet weak var mediumTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mediumTextField.text = "hi"
 
         // Do any additional setup after loading the view.
     }
@@ -22,6 +23,7 @@ class AddNewViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
     /*
     // MARK: - Navigation

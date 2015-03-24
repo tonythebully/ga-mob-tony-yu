@@ -38,7 +38,7 @@ class MediumsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return countElements(mediums)
     }
 
     
@@ -59,17 +59,21 @@ class MediumsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
+            mediums.removeAtIndex(indexPath.row)
+
+// ----------> not sure how to alter data origin
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            
         }    
     }
-    */
+
 
     /*
     // Override to support rearranging the table view.
@@ -95,5 +99,9 @@ class MediumsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func unwindAddInfo(segue : UIStoryboardSegue){
+        let info = (segue.sourceViewController as AddContactInfoViewController).mediumTextField.text
+    }
 
 }

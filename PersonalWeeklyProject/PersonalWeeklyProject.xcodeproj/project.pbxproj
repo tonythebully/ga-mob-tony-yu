@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		432444931AC1135B008294B3 /* AddContactInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432444921AC1135B008294B3 /* AddContactInfoViewController.swift */; };
+		432444C31AC168D7008294B3 /* PeopleCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432444C21AC168D7008294B3 /* PeopleCollection.swift */; };
 		434519301ABD374400C1B6E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4345192F1ABD374400C1B6E9 /* AppDelegate.swift */; };
 		434519321ABD374400C1B6E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434519311ABD374400C1B6E9 /* ViewController.swift */; };
 		434519351ABD374400C1B6E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434519331ABD374400C1B6E9 /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		432444921AC1135B008294B3 /* AddContactInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactInfoViewController.swift; sourceTree = "<group>"; };
+		432444C21AC168D7008294B3 /* PeopleCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleCollection.swift; sourceTree = "<group>"; };
 		4345192A1ABD374400C1B6E9 /* PersonalWeeklyProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalWeeklyProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4345192E1ABD374400C1B6E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4345192F1ABD374400C1B6E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 		4345192C1ABD374400C1B6E9 /* PersonalWeeklyProject */ = {
 			isa = PBXGroup;
 			children = (
+				432444921AC1135B008294B3 /* AddContactInfoViewController.swift */,
 				434519511ABD5CE100C1B6E9 /* AddNewViewController.swift */,
 				434519531ABFD89700C1B6E9 /* FriendListTableView.swift */,
 				4345192F1ABD374400C1B6E9 /* AppDelegate.swift */,
@@ -92,6 +97,7 @@
 				434519361ABD374400C1B6E9 /* Images.xcassets */,
 				434519381ABD374400C1B6E9 /* LaunchScreen.xib */,
 				4345192D1ABD374400C1B6E9 /* Supporting Files */,
+				432444C21AC168D7008294B3 /* PeopleCollection.swift */,
 			);
 			path = PersonalWeeklyProject;
 			sourceTree = "<group>";
@@ -226,6 +232,8 @@
 				434519541ABFD89700C1B6E9 /* FriendListTableView.swift in Sources */,
 				434519521ABD5CE100C1B6E9 /* AddNewViewController.swift in Sources */,
 				434519561ABFD90300C1B6E9 /* MediumsTableViewController.swift in Sources */,
+				432444931AC1135B008294B3 /* AddContactInfoViewController.swift in Sources */,
+				432444C31AC168D7008294B3 /* PeopleCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +427,7 @@
 				4345194B1ABD374400C1B6E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4345194C1ABD374400C1B6E9 /* Build configuration list for PBXNativeTarget "PersonalWeeklyProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -427,6 +436,7 @@
 				4345194E1ABD374400C1B6E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

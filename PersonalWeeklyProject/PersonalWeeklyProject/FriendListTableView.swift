@@ -12,8 +12,8 @@ class FriendListTableView: UITableViewController {
 
     var people = [
         [
-            "name" : "test",
-            "info" : [""]
+            "name" : "add a new contact!",
+            "info" : ["Where would you stalk them?", "Perhaps youtube links, home address, etc"]
             
         ]
     ]
@@ -92,20 +92,42 @@ class FriendListTableView: UITableViewController {
         return true
     }
     */
+    
+    // function that takes in the text field entered at addNewViewController
+    func appendingNewContact(name : String) -> NSDictionary {
+        // also rendering the string into a dictionary for the parent var, people
+        let newPersonDict = [
+            "name" : name,
+            // leaving the info empty as it will be appending at another stage
+            "info" : [""]
+        ]
+        return newPersonDict
+        
+    }
 
-    /*
+    @IBAction func unwindAddNewContact(segue : UIStoryboardSegue) {
+        // not passing anything back yet
+        let name = (segue.sourceViewController as AddNewViewController).newContactTextField.text
+        
+        // appending the new contact dictionary onto the list of contacts
+        people.append(appendingNewContact(name))
+        
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-    }
-    */
-    
-    @IBAction func unwindAddNewContact(segue : UIStoryboardSegue) {
-        // not passing anything back yet
+        
+        // if statement to decide whether to pass objects to new class
+        if segue.identifier == "segueToMediums" {
+            
+            var row = tableView.indexPathForSelectedRow()!.row
+            
+            // passing the array of strings from within info of people to new class
+            (segue.destinationViewController as MediumsTableViewController).mediums = people[row]["info"]! as [String]
+        }
         
     }
-
 }

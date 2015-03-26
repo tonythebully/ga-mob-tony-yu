@@ -66,7 +66,6 @@ class MediumsTableViewController: UITableViewController {
             // Delete the row from the data source
             mediums.removeAtIndex(indexPath.row)
 
-// ----------> not sure how to alter data origin
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -102,6 +101,8 @@ class MediumsTableViewController: UITableViewController {
     
     @IBAction func unwindAddInfo(segue : UIStoryboardSegue){
         let info = (segue.sourceViewController as AddContactInfoViewController).mediumTextField.text
+        
+        mediums.append(info)
     }
 
 }

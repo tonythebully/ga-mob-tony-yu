@@ -10,7 +10,7 @@ import UIKit
 
 class FriendListTableView: UITableViewController {
 
-    var people = [
+    var people : [Dictionary<String, AnyObject>] = [
         [
             "name" : "add a new contact!",
             "info" : ["Where would you stalk them?", "Perhaps youtube links, home address, etc"]
@@ -94,19 +94,28 @@ class FriendListTableView: UITableViewController {
     */
     
     // function that takes in the text field entered at addNewViewController
-    func appendingNewContact(name : String) -> NSDictionary {
+    func appendingNewContact(name : String) -> Dictionary<String, AnyObject> {
         // also rendering the string into a dictionary for the parent var, people
-        let newPersonDict = [
+        let newPersonDict : Dictionary<String, AnyObject> = [
             "name" : name,
             // leaving the info empty as it will be appending at another stage
             "info" : [""]
         ]
+        
         return newPersonDict
+        
+    }
+    @IBAction func unwindMediums(segue : UIStoryboardSegue) {
+        var info = (segue.sourceViewController as MediumsTableViewController).mediums
+        
+        var row = tableView.indexPathForSelectedRow()!.row
+        
+        people[row]["info"] = info
         
     }
 
     @IBAction func unwindAddNewContact(segue : UIStoryboardSegue) {
-        // not passing anything back yet
+        // passing the name back from the addNewViewController
         let name = (segue.sourceViewController as AddNewViewController).newContactTextField.text
         
         // appending the new contact dictionary onto the list of contacts

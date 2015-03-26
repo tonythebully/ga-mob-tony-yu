@@ -9,9 +9,11 @@
 import Foundation
 
 class PeopleCollection {
-    var peopleArray: AnyObject
+    var peopleArray = [
+        [
+            "name" : "add a new contact!",
+            "info" : ["Where would you stalk them?", "Perhaps youtube links, home address, etc"]
+        ]
+    ]
     
-    init(peopleArray: AnyObject) {
-        self.peopleArray = peopleArray
-    }
 }

@@ -164,6 +164,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Mediums" id="0gs-G6-qbT">
+                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="Dev-jk-tyc">
+                            <connections>
+                                <segue destination="A0c-2p-Vtd" kind="unwind" unwindAction="unwindMediums:" id="io0-5W-Ote"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="4pN-O3-fGA">
                             <connections>
                                 <segue destination="guf-4l-7cE" kind="presentation" id="dY9-85-QpX"/>
@@ -172,6 +177,7 @@
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFU-AZ-1bb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="A0c-2p-Vtd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2228" y="-356"/>
         </scene>

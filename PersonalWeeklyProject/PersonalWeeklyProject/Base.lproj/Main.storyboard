@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Qp2-tE-kGD">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -256,21 +257,27 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sMe-Y9-omW" userLabel="First View">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G2X-SZ-Caf">
-                                                        <rect key="frame" x="129" y="209" width="342" height="249"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FirstViewImage" translatesAutoresizingMaskIntoConstraints="NO" id="G2X-SZ-Caf">
+                                                        <rect key="frame" x="8" y="209" width="584" height="383"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="G2X-SZ-Caf" secondAttribute="height" multiplier="584:383" id="sXB-j3-zeP"/>
+                                                        </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ever wonder what your &quot;friends&quot; are up to?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBh-9P-eif">
-                                                        <rect key="frame" x="8" y="78" width="584" height="21"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <rect key="frame" x="8" y="78" width="584" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.65274329050000002" green="1" blue="0.61577966319999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
+                                                    <constraint firstItem="G2X-SZ-Caf" firstAttribute="leading" secondItem="sMe-Y9-omW" secondAttribute="leading" constant="8" id="C45-ee-xUl"/>
                                                     <constraint firstItem="VBh-9P-eif" firstAttribute="top" secondItem="sMe-Y9-omW" secondAttribute="topMargin" constant="70" id="KHK-s5-srL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="G2X-SZ-Caf" secondAttribute="trailing" constant="8" id="VwR-Gq-gE7"/>
                                                     <constraint firstItem="VBh-9P-eif" firstAttribute="leading" secondItem="sMe-Y9-omW" secondAttribute="leading" constant="8" id="ad1-Hb-A0w"/>
                                                     <constraint firstAttribute="trailing" secondItem="VBh-9P-eif" secondAttribute="trailing" constant="8" id="ra5-5P-HjG"/>
+                                                    <constraint firstAttribute="bottom" secondItem="G2X-SZ-Caf" secondAttribute="bottom" constant="8" id="yj6-EU-8eV"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zxe-Lq-AAX" userLabel="Second View">
@@ -306,8 +313,8 @@
                                                             <segue destination="BYZ-38-t0r" kind="show" id="7Hh-jN-LU4"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This is only friendly stalking, promise!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKg-2c-afD">
-                                                        <rect key="frame" x="8" y="8" width="584" height="45"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is only friendly stalking, promise!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKg-2c-afD">
+                                                        <rect key="frame" x="8" y="8" width="584" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -355,7 +362,7 @@
                             <constraint firstItem="cwf-Br-15e" firstAttribute="trailing" secondItem="Kk5-up-vzf" secondAttribute="trailing" id="W1l-d9-1aB"/>
                             <constraint firstItem="sMe-Y9-omW" firstAttribute="height" secondItem="Kk5-up-vzf" secondAttribute="height" id="YWC-v4-j0K"/>
                             <constraint firstItem="sMe-Y9-omW" firstAttribute="width" secondItem="Kk5-up-vzf" secondAttribute="width" id="ZED-UT-hx7"/>
-                            <constraint firstItem="WDi-Gp-hVQ" firstAttribute="top" secondItem="cwf-Br-15e" secondAttribute="bottom" id="s5e-fB-lAd"/>
+                            <constraint firstItem="cwf-Br-15e" firstAttribute="bottom" secondItem="WDi-Gp-hVQ" secondAttribute="top" id="s5e-fB-lAd"/>
                             <constraint firstItem="cwf-Br-15e" firstAttribute="top" secondItem="Kk5-up-vzf" secondAttribute="topMargin" id="zBG-rc-JoA"/>
                         </constraints>
                     </view>
@@ -404,4 +411,7 @@
             <point key="canvasLocation" x="2228" y="-1045"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="FirstViewImage" width="183" height="199"/>
+    </resources>
 </document>

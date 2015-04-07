@@ -42,8 +42,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func decimalOperation(sender: UIButton) {
-        if (isDecimal) {
-            
+        if (!isDecimal) {
+            self.outputLabel!.text = "\(self.outputLabel!.text!)."
         }
     }
     
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         
         // assigning the current number value as previous value and storing it
         if (previousButtonWasNumber) {
-            println("assigning previousVale to \(self.outputLabel!.text!.toInt()!)")
+            println("assigning previousVale to \((self.outputLabel!.text! as NSString).doubleValue)")
             self.previousValue = (self.outputLabel!.text! as NSString).doubleValue
         }
 

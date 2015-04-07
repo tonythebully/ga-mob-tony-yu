@@ -13,9 +13,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var outputLabel: UILabel!
     
     var operation: String? = nil
-    var previousValue = 0
+    var previousValue: Double = 0
     var previousButtonWasNumber = false
-
+    var isDecimal = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +41,12 @@ class ViewController: UIViewController {
         self.previousButtonWasNumber = true
     }
 
+    @IBAction func decimalOperation(sender: UIButton) {
+        if (isDecimal) {
+            
+        }
+    }
+    
     @IBAction func operationButtonTapped(sender: UIButton) {
         
         // this looks what the text on the button was, to determine what is the input
@@ -50,13 +56,14 @@ class ViewController: UIViewController {
         // assigning the current number value as previous value and storing it
         if (previousButtonWasNumber) {
             println("assigning previousVale to \(self.outputLabel!.text!.toInt()!)")
-            self.previousValue = self.outputLabel!.text!.toInt()!
+            self.previousValue = (self.outputLabel!.text! as NSString).doubleValue
         }
 
+        // in the case that operations had been entered without equating, equate what whats previously entered then accepts new inputs
         if (self.operation != nil) {
             println("there are previous operations, which was \(self.operation!)")
             self.equalsButtonTapped(sender)
-            self.previousValue = self.outputLabel!.text!.toInt()!
+            self.previousValue = (self.outputLabel!.text! as NSString).doubleValue
         // in the event that there had not been a previous operation, save the input operation as well as resetting the outputLabel to 0
         } else {
             println("there had been no previous operations")
@@ -65,29 +72,36 @@ class ViewController: UIViewController {
         self.previousButtonWasNumber = false
     }
     
+    // determines whether what the previously entered buttons are a standard operation or not, then calls func calculate in different conditions
     @IBAction func equalsButtonTapped(sender: UIButton) {
         var previousValue = self.previousValue
-        var result: String
+        var result: NSString
         result = self.calculate(self.operation)
 
-
+        // case for when the equal button is actually pressed
         if (sender.titleForState(.Normal)! == "="){
             println("was actual =")
             self.outputLabel.text! = result
-            previousValue = self.outputLabel!.text!.toInt()!
+            previousValue = (self.outputLabel!.text! as NSString).doubleValue
             self.operation = nil
+            
+        // case for when this function is called when multiple operations had been entered
         } else {
             println("not actual =")
-            previousValue = result.toInt()!
+            previousValue = result.doubleValue
         }
+        
+        // saves value if needed, reseting the state of previous button
         self.previousValue = previousValue
         self.previousButtonWasNumber = false
     }
 
+    // simply calls the clear function
     @IBAction func swipeToClear(sender: UISwipeGestureRecognizer) {
         clearAll()
     }
     
+    // this function resets all values back to its initial state, thus reseting the state of the calculator
     func clearAll() {
         self.operation = nil
         self.previousValue = 0
@@ -96,25 +110,28 @@ class ViewController: UIViewController {
         println("input and memory cleared")
     }
     
+    // this function does the actual calculations based on the previous operation type and returns results
     func calculate(operationType: String!) -> String {
+        let currentValue = (self.outputLabel.text! as NSString).doubleValue
+        
         if (self.operation == nil) {
             return "void"
             
         } else if (operationType == "÷") {
-            println("the operation is \(previousValue) / \(self.outputLabel!.text!.toInt()!)")
-            return "\(previousValue / self.outputLabel!.text!.toInt()!)"
+            println("the operation is \(previousValue) / \((self.outputLabel!.text))")
+            return "\(previousValue / currentValue)"
             
         } else if (operationType == "×") {
             println("the operation is \(previousValue) * \(self.outputLabel!.text!.toInt()!)")
-            return "\(previousValue * self.outputLabel!.text!.toInt()!)"
+            return "\(previousValue * currentValue)"
             
         } else if (operationType == "+") {
             println("the operation is \(previousValue) + \(self.outputLabel!.text!.toInt()!)")
-            return "\(previousValue + self.outputLabel!.text!.toInt()!)"
+            return "\(previousValue + currentValue)"
             
         } else if (operationType == "−") {
             println("the operation is \(previousValue) - \(self.outputLabel!.text!.toInt()!)")
-            return "\(previousValue - self.outputLabel!.text!.toInt()!)"
+            return "\(previousValue - currentValue)"
         } else {
             self.clearAll()
             return "Error"

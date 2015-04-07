@@ -113,6 +113,9 @@
                                         <exclude reference="kTc-13-kQI"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="decimalOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wle-zx-oTz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WH4-8X-8Vy">
                                 <rect key="frame" x="94" y="386" width="93" height="93"/>
@@ -338,7 +341,7 @@
                                 </connections>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to clear" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HdV-17-eAm">
-                                <rect key="frame" x="0.0" y="40" width="375" height="20.5"/>
+                                <rect key="frame" x="0.0" y="40" width="375" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

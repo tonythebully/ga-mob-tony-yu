@@ -44,11 +44,11 @@ class FriendListTableView: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return countElements(people)
+        return count(people)
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("FriendsToBeStalked", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("FriendsToBeStalked", forIndexPath: indexPath) as! UITableViewCell
 
         // prints the key of the current people dictionary
         // as each dictionary only has one key, leaving array[0] should be ok
@@ -106,7 +106,7 @@ class FriendListTableView: UITableViewController {
         
     }
     @IBAction func unwindMediums(segue : UIStoryboardSegue) {
-        var info = (segue.sourceViewController as MediumsTableViewController).mediums
+        var info = (segue.sourceViewController as! MediumsTableViewController).mediums
         
         var row = tableView.indexPathForSelectedRow()!.row
         
@@ -116,7 +116,7 @@ class FriendListTableView: UITableViewController {
 
     @IBAction func unwindAddNewContact(segue : UIStoryboardSegue) {
         // passing the name back from the addNewViewController
-        let name = (segue.sourceViewController as AddNewViewController).newContactTextField.text
+        let name = (segue.sourceViewController as! AddNewViewController).newContactTextField.text
         
         // appending the new contact dictionary onto the list of contacts
         people.append(appendingNewContact(name))
@@ -135,7 +135,7 @@ class FriendListTableView: UITableViewController {
             var row = tableView.indexPathForSelectedRow()!.row
             
             // passing the array of strings from within info of people to new class
-            (segue.destinationViewController as MediumsTableViewController).mediums = people[row]["info"]! as [String]
+            (segue.destinationViewController as! MediumsTableViewController).mediums = people[row]["info"]! as! [String]
         }
         
     }

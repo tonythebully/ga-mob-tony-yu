@@ -38,12 +38,12 @@ class MediumsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return countElements(mediums)
+        return count(mediums)
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("stalkMediums", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("stalkMediums", forIndexPath: indexPath) as! UITableViewCell
 
         cell.textLabel?.text = mediums[indexPath.row]
 
@@ -100,7 +100,7 @@ class MediumsTableViewController: UITableViewController {
     */
     
     @IBAction func unwindAddInfo(segue : UIStoryboardSegue){
-        let info = (segue.sourceViewController as AddContactInfoViewController).mediumTextField.text
+        let info = (segue.sourceViewController as! AddContactInfoViewController).mediumTextField.text
         
         mediums.append(info)
     }

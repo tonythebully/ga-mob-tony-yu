@@ -9,6 +9,8 @@
 import UIKit
 
 class FriendListTableView: UITableViewController {
+    
+    var appDelegate: AppDelegate?
 
     var people : [Dictionary<String, AnyObject>] = [
         [
@@ -21,6 +23,7 @@ class FriendListTableView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

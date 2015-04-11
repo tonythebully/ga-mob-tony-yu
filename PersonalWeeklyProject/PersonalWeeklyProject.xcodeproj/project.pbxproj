@@ -18,6 +18,8 @@
 		434519521ABD5CE100C1B6E9 /* AddNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434519511ABD5CE100C1B6E9 /* AddNewViewController.swift */; };
 		434519541ABFD89700C1B6E9 /* FriendListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434519531ABFD89700C1B6E9 /* FriendListTableView.swift */; };
 		434519561ABFD90300C1B6E9 /* MediumsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434519551ABFD90300C1B6E9 /* MediumsTableViewController.swift */; };
+		439260411AD912B100C8DCB0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4392603F1AD912B100C8DCB0 /* Model.xcdatamodeld */; };
+		439260431AD9143300C8DCB0 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439260421AD9143300C8DCB0 /* Entity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		434519511ABD5CE100C1B6E9 /* AddNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewViewController.swift; sourceTree = "<group>"; };
 		434519531ABFD89700C1B6E9 /* FriendListTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListTableView.swift; sourceTree = "<group>"; };
 		434519551ABFD90300C1B6E9 /* MediumsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumsTableViewController.swift; sourceTree = "<group>"; };
+		439260401AD912B100C8DCB0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		439260421AD9143300C8DCB0 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 		434519211ABD374400C1B6E9 = {
 			isa = PBXGroup;
 			children = (
+				439260421AD9143300C8DCB0 /* Entity.swift */,
 				4345192C1ABD374400C1B6E9 /* PersonalWeeklyProject */,
 				434519421ABD374400C1B6E9 /* PersonalWeeklyProjectTests */,
 				4345192B1ABD374400C1B6E9 /* Products */,
@@ -96,6 +101,7 @@
 				434519551ABFD90300C1B6E9 /* MediumsTableViewController.swift */,
 				434519361ABD374400C1B6E9 /* Images.xcassets */,
 				434519381ABD374400C1B6E9 /* LaunchScreen.xib */,
+				4392603F1AD912B100C8DCB0 /* Model.xcdatamodeld */,
 				4345192D1ABD374400C1B6E9 /* Supporting Files */,
 				432444C21AC168D7008294B3 /* PeopleCollection.swift */,
 			);
@@ -232,6 +238,8 @@
 				434519541ABFD89700C1B6E9 /* FriendListTableView.swift in Sources */,
 				434519521ABD5CE100C1B6E9 /* AddNewViewController.swift in Sources */,
 				434519561ABFD90300C1B6E9 /* MediumsTableViewController.swift in Sources */,
+				439260411AD912B100C8DCB0 /* Model.xcdatamodeld in Sources */,
+				439260431AD9143300C8DCB0 /* Entity.swift in Sources */,
 				432444931AC1135B008294B3 /* AddContactInfoViewController.swift in Sources */,
 				432444C31AC168D7008294B3 /* PeopleCollection.swift in Sources */,
 			);
@@ -439,6 +447,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4392603F1AD912B100C8DCB0 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				439260401AD912B100C8DCB0 /* Model.xcdatamodel */,
+			);
+			currentVersion = 439260401AD912B100C8DCB0 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 434519221ABD374400C1B6E9 /* Project object */;
 }

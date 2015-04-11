@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
 class AddContactInfoViewController: UIViewController {
+    
+    var appDelegate: AppDelegate?
 
     @IBOutlet weak var mediumTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mediumTextField.text = "hi"
+        self.appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
 
         // Do any additional setup after loading the view.
     }
@@ -24,7 +28,18 @@ class AddContactInfoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func viewDidDisappear(animated: Bool) {
+        let note = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: appDelegate!.managedObjectContext!) as! Entity
+        
+        let newProfile: Dictionary<String, AnyObject> = [
+            "name" : self.mediumTextField.text!,
+            "info" : [""]
+        ]
+        
+        note.friends = newProfile
+        
+        appDelegate!.saveContext()
+    }
     /*
     // MARK: - Navigation
 

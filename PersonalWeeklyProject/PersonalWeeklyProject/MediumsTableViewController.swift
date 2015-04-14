@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class MediumsTableViewController: UITableViewController {
     
@@ -103,6 +104,7 @@ class MediumsTableViewController: UITableViewController {
         let info = (segue.sourceViewController as! AddContactInfoViewController).mediumTextField.text
         
         mediums.append(info)
+        self.tableView.reloadData()
     }
 
 }

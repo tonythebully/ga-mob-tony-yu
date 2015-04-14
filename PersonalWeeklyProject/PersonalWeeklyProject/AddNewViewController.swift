@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class AddNewViewController: UIViewController {
 
     @IBOutlet weak var newContactTextField: UITextField!
+    var appDelegate: AppDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,16 @@ class AddNewViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func viewDidDisappear(animated: Bool) {
+        let note = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: appDelegate!.managedObjectContext!) as! Entity
+        
+        
+        if (self.newContactTextField.text != nil) {
+            note.name = self.newContactTextField.text!
+        }
+        
+        appDelegate!.saveContext()
+    }
     /*
     // MARK: - Navigation
 

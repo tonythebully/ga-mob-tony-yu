@@ -19,7 +19,7 @@
 		434519541ABFD89700C1B6E9 /* FriendListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434519531ABFD89700C1B6E9 /* FriendListTableView.swift */; };
 		434519561ABFD90300C1B6E9 /* MediumsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434519551ABFD90300C1B6E9 /* MediumsTableViewController.swift */; };
 		439260411AD912B100C8DCB0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4392603F1AD912B100C8DCB0 /* Model.xcdatamodeld */; };
-		439260431AD9143300C8DCB0 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439260421AD9143300C8DCB0 /* Entity.swift */; };
+		439260471ADCE88900C8DCB0 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439260461ADCE88900C8DCB0 /* Entity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,7 @@
 		434519531ABFD89700C1B6E9 /* FriendListTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListTableView.swift; sourceTree = "<group>"; };
 		434519551ABFD90300C1B6E9 /* MediumsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumsTableViewController.swift; sourceTree = "<group>"; };
 		439260401AD912B100C8DCB0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		439260421AD9143300C8DCB0 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		439260461ADCE88900C8DCB0 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,7 @@
 		434519211ABD374400C1B6E9 = {
 			isa = PBXGroup;
 			children = (
-				439260421AD9143300C8DCB0 /* Entity.swift */,
+				439260461ADCE88900C8DCB0 /* Entity.swift */,
 				4345192C1ABD374400C1B6E9 /* PersonalWeeklyProject */,
 				434519421ABD374400C1B6E9 /* PersonalWeeklyProjectTests */,
 				4345192B1ABD374400C1B6E9 /* Products */,
@@ -95,10 +95,10 @@
 				432444921AC1135B008294B3 /* AddContactInfoViewController.swift */,
 				434519511ABD5CE100C1B6E9 /* AddNewViewController.swift */,
 				434519531ABFD89700C1B6E9 /* FriendListTableView.swift */,
+				434519551ABFD90300C1B6E9 /* MediumsTableViewController.swift */,
 				4345192F1ABD374400C1B6E9 /* AppDelegate.swift */,
 				434519311ABD374400C1B6E9 /* ViewController.swift */,
 				434519331ABD374400C1B6E9 /* Main.storyboard */,
-				434519551ABFD90300C1B6E9 /* MediumsTableViewController.swift */,
 				434519361ABD374400C1B6E9 /* Images.xcassets */,
 				434519381ABD374400C1B6E9 /* LaunchScreen.xib */,
 				4392603F1AD912B100C8DCB0 /* Model.xcdatamodeld */,
@@ -238,8 +238,8 @@
 				434519541ABFD89700C1B6E9 /* FriendListTableView.swift in Sources */,
 				434519521ABD5CE100C1B6E9 /* AddNewViewController.swift in Sources */,
 				434519561ABFD90300C1B6E9 /* MediumsTableViewController.swift in Sources */,
+				439260471ADCE88900C8DCB0 /* Entity.swift in Sources */,
 				439260411AD912B100C8DCB0 /* Model.xcdatamodeld in Sources */,
-				439260431AD9143300C8DCB0 /* Entity.swift in Sources */,
 				432444931AC1135B008294B3 /* AddContactInfoViewController.swift in Sources */,
 				432444C31AC168D7008294B3 /* PeopleCollection.swift in Sources */,
 			);

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class FriendListTableView: UITableViewController {
     
@@ -19,6 +20,7 @@ class FriendListTableView: UITableViewController {
             
         ]
     ]
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,11 +57,10 @@ class FriendListTableView: UITableViewController {
 
         // prints the key of the current people dictionary
         // as each dictionary only has one key, leaving array[0] should be ok
-        cell.textLabel?.text = people[indexPath.row]["name"] as? String
+        cell.textLabel!.text = people[indexPath.row]["name"] as? String
 
         return cell
     }
-
 
     /*
     // Override to support conditional editing of the table view.
@@ -69,17 +70,20 @@ class FriendListTableView: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
+            
+            
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+            
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
 
     /*
     // Override to support rearranging the table view.
@@ -123,7 +127,7 @@ class FriendListTableView: UITableViewController {
         
         // appending the new contact dictionary onto the list of contacts
         people.append(appendingNewContact(name))
-        
+        self.tableView.reloadData()
     }
     // MARK: - Navigation
 

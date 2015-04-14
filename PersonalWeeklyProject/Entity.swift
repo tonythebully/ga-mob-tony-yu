@@ -2,7 +2,7 @@
 //  Entity.swift
 //  PersonalWeeklyProject
 //
-//  Created by Tony Yu on 11/04/2015.
+//  Created by Tony Yu on 14/04/2015.
 //  Copyright (c) 2015 loljk. All rights reserved.
 //
 
@@ -11,6 +11,7 @@ import CoreData
 
 class Entity: NSManagedObject {
 
-    @NSManaged var friends: Dictionary<String, AnyObject>
+    @NSManaged var name: String
+    @NSManaged var mediums: [String]
 
 }

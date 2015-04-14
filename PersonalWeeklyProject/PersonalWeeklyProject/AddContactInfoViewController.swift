@@ -29,7 +29,8 @@ class AddContactInfoViewController: UIViewController {
     }
     
     override func viewDidDisappear(animated: Bool) {
-        let note = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: appDelegate!.managedObjectContext!) as! Entity
+        let mediumFetchRequest = NSFetchRequest(entityName: "Entity")
+        let sortDescriptor = NSSortDescriptor(key: "dateAdded", ascending: false)
         
         let newProfile: Dictionary<String, AnyObject> = [
             "name" : self.mediumTextField.text!,

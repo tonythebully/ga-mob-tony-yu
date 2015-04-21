@@ -32,12 +32,9 @@ class AddContactInfoViewController: UIViewController {
         let mediumFetchRequest = NSFetchRequest(entityName: "Entity")
         let sortDescriptor = NSSortDescriptor(key: "dateAdded", ascending: false)
         
-        let newProfile: Dictionary<String, AnyObject> = [
-            "name" : self.mediumTextField.text!,
-            "info" : [""]
-        ]
+        let newProfile = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: appDelegate!.managedObjectContext!) as! Entity
         
-        note.friends = newProfile
+        newProfile.name = self.mediumTextField.text!
         
         appDelegate!.saveContext()
     }

@@ -49,7 +49,7 @@
 		434519531ABFD89700C1B6E9 /* FriendListTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListTableView.swift; sourceTree = "<group>"; };
 		434519551ABFD90300C1B6E9 /* MediumsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumsTableViewController.swift; sourceTree = "<group>"; };
 		439260401AD912B100C8DCB0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		439260461ADCE88900C8DCB0 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		439260461ADCE88900C8DCB0 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entity.swift; path = ../Entity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,6 @@
 		434519211ABD374400C1B6E9 = {
 			isa = PBXGroup;
 			children = (
-				439260461ADCE88900C8DCB0 /* Entity.swift */,
 				4345192C1ABD374400C1B6E9 /* PersonalWeeklyProject */,
 				434519421ABD374400C1B6E9 /* PersonalWeeklyProjectTests */,
 				4345192B1ABD374400C1B6E9 /* Products */,
@@ -102,6 +101,7 @@
 				434519361ABD374400C1B6E9 /* Images.xcassets */,
 				434519381ABD374400C1B6E9 /* LaunchScreen.xib */,
 				4392603F1AD912B100C8DCB0 /* Model.xcdatamodeld */,
+				439260461ADCE88900C8DCB0 /* Entity.swift */,
 				4345192D1ABD374400C1B6E9 /* Supporting Files */,
 				432444C21AC168D7008294B3 /* PeopleCollection.swift */,
 			);

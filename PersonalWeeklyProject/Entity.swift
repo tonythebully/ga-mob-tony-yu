@@ -13,5 +13,6 @@ class Entity: NSManagedObject {
 
     @NSManaged var name: String
     @NSManaged var mediums: [String]
+    @NSManaged var dateAdded: NSDate
 
 }

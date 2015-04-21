@@ -6,27 +6,39 @@
 //  Copyright (c) 2015 loljk. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import CoreData
 
 class PeopleCollection {
-    var peopleArray : [Dictionary<String, AnyObject>] = [
-        [
-            "name" : "add a new contact!",
-            "info" : ["Where would you stalk them?", "Perhaps youtube links, home address, etc"]
-        ]
-    ]
+    var managedObjectContext: NSManagedObjectContext{
+        let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+        return appDelegate!.managedObjectContext!
+    }
     
-    // appends a new dictionary with new contact to peopleArray
-    func addNewContact(name : String) {
-        let newPersonDict : Dictionary<String, AnyObject> = [
-            "name" : name,
-            // leaving the info empty as it will be appending at another stage
-            "info" : [""]
-        ]
-        self.peopleArray.append(newPersonDict)
+    let profileFetchRequest = NSFetchRequest(entityName: "Entity")
+    let sortDescriptor = NSSortDescriptor(key: "dateAdded", ascending: true)
+    profileFetchRequest.sortDescriptors = [sortDescriptor]
+    
+    func appendNewProfile(name: String) {
+        
+        let newProfile = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: self.managedObjectContext) as! Entity
+        newProfile.name = name
+        newProfile.dateAdded = NSDate()
     }
-    // changes the info related to the current person via indexPath
-    func editPersonInfo (info : [String], indexPath : NSIndexPath) {
-        self.peopleArray[indexPath.row]["info"] = info
+    
+    func appendingProfileDetails(medium: String, indexPathOfProfile: NSIndexPath) {
+        
+        let changes = self.managedObjectContext.executeFetchRequest(self.profileFetchRequest, error: nil) as! [Entity]
+        changes[indexPathOfProfile.row].mediums.append(medium)
     }
+    
+    func deleteProfile(indexPathofProfile: NSIndexPath) {
+        let profileToDelete = self.managedObjectContext.executeFetchRequest(self.profileFetchRequest, error: nil) as! [Entity]
+        
+        self.managedObjectContext.deleteObject(profileToDelete[indexPathofProfile.row])
+    }
+    func deleteMediumofProfile(indexPathOfProfile: NSIndexPath, indexPathOfMedium: NSIndexPath) {
+        
+    }
+    
 }

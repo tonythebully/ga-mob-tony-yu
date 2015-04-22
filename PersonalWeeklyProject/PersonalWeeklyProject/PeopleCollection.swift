@@ -27,6 +27,8 @@ class PeopleCollection {
         newProfile.name = name
         newProfile.mediums = []
         newProfile.dateAdded = NSDate()
+        
+        self.saveContext()
     }
     
     func appendingProfileDetails(medium: String, indexPathOfProfile: NSIndexPath) {
@@ -36,6 +38,8 @@ class PeopleCollection {
         
         let profileToChange = self.managedObjectContext.executeFetchRequest(self.profileFetchRequest, error: nil) as! [Entity]
         profileToChange[indexPathOfProfile.row].mediums.append(medium)
+        
+        self.saveContext()
     }
     
     func deleteProfile(indexPathofProfile: NSIndexPath) {
@@ -45,6 +49,7 @@ class PeopleCollection {
         let profileToDelete = self.managedObjectContext.executeFetchRequest(self.profileFetchRequest, error: nil) as! [Entity]
         
         self.managedObjectContext.deleteObject(profileToDelete[indexPathofProfile.row])
+        self.saveContext()
     }
     
     
@@ -55,6 +60,13 @@ class PeopleCollection {
         let profileToChange = self.managedObjectContext.executeFetchRequest(self.profileFetchRequest, error: nil) as! [Entity]
         
         profileToChange[indexPathOfProfile.row].mediums.removeAtIndex(indexPathOfMedium.row)
+    
+        self.saveContext()
+    }
+    func saveContext() {
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+        appDelegate?.saveContext()
     }
     
 }

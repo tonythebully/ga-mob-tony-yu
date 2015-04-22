@@ -26,14 +26,16 @@ class AddNewViewController: UIViewController {
     }
 
     override func viewDidDisappear(animated: Bool) {
-        let note = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: appDelegate!.managedObjectContext!) as! Entity
-        
-        
-        if (self.newContactTextField.text != nil) {
-            note.name = self.newContactTextField.text!
-        }
-        
-        appDelegate!.saveContext()
+        let peopleCollectionClass = PeopleCollection()
+        peopleCollectionClass.appendNewProfile(self.newContactTextField.text!)
+//        let note = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: appDelegate!.managedObjectContext!) as! Entity
+//        
+//        
+//        if (self.newContactTextField.text != nil) {
+//            note.name = self.newContactTextField.text!
+//        }
+//        
+//        appDelegate!.saveContext()
     }
     /*
     // MARK: - Navigation

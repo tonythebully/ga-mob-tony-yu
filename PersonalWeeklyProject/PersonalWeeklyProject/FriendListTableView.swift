@@ -26,6 +26,18 @@ class FriendListTableView: UITableViewController {
         super.viewDidLoad()
 
         self.appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+        
+        let notesFestchRequest = NSFetchRequest(entityName: "Entity")
+        let sortDescriptor = NSSortDescriptor(key: "dateAdded", ascending: true)
+        notesFestchRequest.sortDescriptors = [sortDescriptor]
+        
+        if let profiles = appDelegate!.managedObjectContext!.executeFetchRequest(notesFestchRequest, error: nil) as? [Entity] {
+            for profile in profiles {
+                println(profile.name)
+                println("\(profile.mediums) \n")
+                println(profile.dateAdded)
+            }
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

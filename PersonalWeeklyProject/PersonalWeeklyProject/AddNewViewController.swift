@@ -25,9 +25,16 @@ class AddNewViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func viewDidDisappear(animated: Bool) {
+    @IBAction func CreateNewProfile(sender: UIBarButtonItem) {
         let peopleCollectionClass = PeopleCollection()
         peopleCollectionClass.appendNewProfile(self.newContactTextField.text!)
+        
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            
+        })
+    }
+    override func viewDidDisappear(animated: Bool) {
+
 //        let note = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: appDelegate!.managedObjectContext!) as! Entity
 //        
 //        

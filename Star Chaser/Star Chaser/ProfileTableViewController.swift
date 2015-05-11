@@ -44,14 +44,14 @@ class ProfileTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("profile cells", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("profile cells", forIndexPath: indexPath) as! ProfileTableViewCell
 
         var firstName = profiles[indexPath.row]["firstName"] as! String
         var lastName = profiles[indexPath.row]["lastName"] as! String
         var title = profiles[indexPath.row]["title"] as? String
         
-        cell.textLabel?.text = title
-        cell.detailTextLabel?.text = "\(firstName) \(lastName)"
+        cell.maintitleTextLabel?.text = title
+        cell.subtitleTextLabel?.text = "\(firstName) \(lastName)"
 
         return cell
     }
@@ -70,8 +70,9 @@ class ProfileTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             
-//            profiles.removeAtIndex(indexPath.row)
             removeProfile(indexPath)
+            profiles.removeAtIndex(indexPath.row)
+            
             // Delete the row from the data source
             
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
@@ -97,15 +98,24 @@ class ProfileTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        if segue.identifier == "Segue to Profile Detail" {
+            let pressedButton = sender as! UIButton
+            let cell = pressedButton.superview?.superview as! UITableViewCell
+            
+            self.tableView.indexPathForCell(cell)
+            
+            let row = tableView.indexPathForCell(cell)!.row
+            ((segue.destinationViewController as! UINavigationController).viewControllers[0] as! ProfileDetailViewController).profileObject = profiles[row] as? PFObject
+        }
     }
-    */
+    
     
     //get all the pinned profiles and place them in the profiles container
     func getPinnedProfiles() {
@@ -135,8 +145,9 @@ class ProfileTableViewController: UITableViewController {
     }
     
     //create a new profile then saving it in parse while pinning it locally for use
-    func addProfile(firstName: String, lastName: String) {
+    func addProfile(firstName: String, lastName: String, title: String) {
         let profileObject = PFObject(className: "Profiles")
+        profileObject["title"] = title
         profileObject["firstName"] = firstName
         profileObject["lastName"] = lastName
         profileObject.saveInBackground()
@@ -152,8 +163,9 @@ class ProfileTableViewController: UITableViewController {
     @IBAction func unwindFromAddNewProfile(segue: UIStoryboardSegue) {
         var firstName = (segue.sourceViewController as! AddNewProfileViewController).firstNameTextField
         var lastName = (segue.sourceViewController as! AddNewProfileViewController).lastNameTextField
+        var title = (segue.sourceViewController as! AddNewProfileViewController).titleTextField
         
-        self.addProfile(firstName.text, lastName: lastName.text)
+        self.addProfile(firstName.text, lastName: lastName.text, title: title.text)
         self.getPinnedProfiles()
         self.tableView.reloadData()
     }

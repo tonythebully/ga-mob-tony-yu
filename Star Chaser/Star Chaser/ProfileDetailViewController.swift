@@ -7,18 +7,28 @@
 //
 
 import UIKit
+import Parse
 
 class ProfileDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var firstNameLabel: UILabel!
-    @IBOutlet weak var lastNameLabel: UILabel!
+    @IBOutlet weak var fullNameTextLabel: UILabel!
+    @IBOutlet weak var titleTextLabel: UILabel!
     
-    var socialMedias = []
+    var profileObject: PFObject?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2
+        
+        if let profile = profileObject {
+            
+            titleTextLabel.text = profile["title"] as? String
+            
+            let firstName = profile["firstName"] as! String
+            let lastName = profile["lastName"] as! String
+            fullNameTextLabel.text = "\(firstName) \(lastName)"
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -29,6 +39,7 @@ class ProfileDetailViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+        
         return cell
     }
     
@@ -44,5 +55,8 @@ class ProfileDetailViewController: UIViewController, UITableViewDelegate, UITabl
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func doneButtonPressed(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
 }

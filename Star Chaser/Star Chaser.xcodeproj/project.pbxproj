@@ -38,8 +38,6 @@
 		433160A51AF60DFB00196B4F /* ParseHelperClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433160A41AF60DFB00196B4F /* ParseHelperClass.swift */; };
 		43B421DA1AFB1D410005BA5D /* AddSocialMediaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B421D91AFB1D410005BA5D /* AddSocialMediaTableViewController.swift */; };
 		43B421DF1AFB30E20005BA5D /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B421DD1AFB30E20005BA5D /* ProfileTableViewCell.swift */; };
-		43B421E01AFB30E20005BA5D /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43B421DE1AFB30E20005BA5D /* ProfileTableViewCell.xib */; };
-		43D73C571AF9F7F200B51AA7 /* profileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43D73C561AF9F7F200B51AA7 /* profileCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,8 +86,6 @@
 		433160A41AF60DFB00196B4F /* ParseHelperClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParseHelperClass.swift; path = ../ParseHelperClass.swift; sourceTree = "<group>"; };
 		43B421D91AFB1D410005BA5D /* AddSocialMediaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSocialMediaTableViewController.swift; sourceTree = "<group>"; };
 		43B421DD1AFB30E20005BA5D /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
-		43B421DE1AFB30E20005BA5D /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
-		43D73C561AF9F7F200B51AA7 /* profileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = profileCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,13 +146,11 @@
 			isa = PBXGroup;
 			children = (
 				43B421DD1AFB30E20005BA5D /* ProfileTableViewCell.swift */,
-				43B421DE1AFB30E20005BA5D /* ProfileTableViewCell.xib */,
 				431121261AEB8361001E5FE2 /* AppDelegate.swift */,
 				4311212B1AEB8361001E5FE2 /* ViewController.swift */,
 				4311212D1AEB8361001E5FE2 /* Main.storyboard */,
 				43B421D91AFB1D410005BA5D /* AddSocialMediaTableViewController.swift */,
 				431121491AF20518001E5FE2 /* ProfileTableViewController.swift */,
-				43D73C561AF9F7F200B51AA7 /* profileCell.xib */,
 				4331609C1AF3614700196B4F /* AddNewProfileViewController.swift */,
 				433160611AF2303A00196B4F /* ProfileDetailViewController.swift */,
 				433160A01AF5E54900196B4F /* NewsFeedTableViewController.swift */,
@@ -299,10 +293,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4311212F1AEB8361001E5FE2 /* Main.storyboard in Resources */,
-				43D73C571AF9F7F200B51AA7 /* profileCell.xib in Resources */,
 				431121341AEB8361001E5FE2 /* LaunchScreen.xib in Resources */,
 				431121311AEB8361001E5FE2 /* Images.xcassets in Resources */,
-				43B421E01AFB30E20005BA5D /* ProfileTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

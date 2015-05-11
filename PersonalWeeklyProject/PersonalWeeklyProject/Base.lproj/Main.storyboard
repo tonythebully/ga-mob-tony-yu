@@ -37,7 +37,7 @@
                                     <segue destination="C7R-in-Wuj" kind="show" id="8yG-cO-SOT"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomePageImage" translatesAutoresizingMaskIntoConstraints="NO" id="dIz-a3-ntJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="HomePageImage" translatesAutoresizingMaskIntoConstraints="NO" id="dIz-a3-ntJ">
                                 <rect key="frame" x="50" y="-10" width="500" height="500"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dIz-a3-ntJ" secondAttribute="height" multiplier="1:1" id="JGH-2B-eiF"/>
